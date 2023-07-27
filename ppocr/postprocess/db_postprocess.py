@@ -82,7 +82,7 @@ class DBPostProcess(object):
 
             if points.shape[0] > 2:
                 box = self.unclip(points, self.unclip_ratio)
-                if len(box) > 1:
+                if len(box) > 1 or len(box)==0:
                     continue
             else:
                 continue
