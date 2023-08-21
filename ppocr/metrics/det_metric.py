@@ -23,7 +23,7 @@ from .eval_det_iou import DetectionIoUEvaluator
 
 class DetMetric(object):
     def __init__(self, main_indicator='hmean', **kwargs):
-        self.evaluator = DetectionIoUEvaluator()
+        self.evaluator = DetectionIoUEvaluator(iou_constraint=0.8)
         self.main_indicator = main_indicator
         self.reset()
 
