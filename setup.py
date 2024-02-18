@@ -12,9 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from setuptools import setup
+from setuptools import setup, find_packages
 from io import open
 from paddleocr import VERSION
+
 
 def load_requirements(file_list=None):
     if file_list is None:
@@ -36,7 +37,8 @@ def readme():
 
 setup(
     name='paddleocr',
-    packages=['paddleocr'],
+    # packages=['paddleocr'],
+    packages=find_packages(exclude=["tests", ".github"]),
     package_dir={'paddleocr': ''},
     include_package_data=True,
     entry_points={"console_scripts": ["paddleocr= paddleocr.paddleocr:main"]},
